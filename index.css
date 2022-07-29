@@ -10,3 +10,38 @@ footer {
     right: 0;
     padding: 1rem;
 }
+
+.circle {
+    transition: transform 1s ease-in-out;
+    cursor: pointer;
+    width: 250px;
+    height: 50px;
+    background-color: azure;
+    color: #181A18;
+    font-size: 40px;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.circle:hover {
+    transform: rotate(360deg);
+    content: 'Leave me alone'
+}
+
+.hidden-message a:hover {
+    position: relative;
+}
+
+.hidden-message a[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 100%;
+    height: 1.5rem;
+    color: #181A18;
+    padding: .1rem;
+    border-radius: 5px;
+    text-align: center;
+    background-image: linear-gradient(#eeeeee, #cccccc);
+}
