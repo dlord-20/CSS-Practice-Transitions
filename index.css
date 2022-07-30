@@ -109,6 +109,7 @@ footer {
     border-radius: 25px;
     transition: all 1.5s ease-in-out;
     border: 1px yellow solid;
+    cursor: pointer;
 }
 
 .growRight:hover::before {
@@ -119,6 +120,84 @@ footer {
     border-radius: 55px;
     border: 2px green solid;
 }
+
+.hexagon {
+
+    position: absolute;
+    background: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: bottom left;
+}
+
+.big {
+    width: 300px;
+    height: 173px;
+    transition-delay: 1s;
+}
+
+.medium {
+    width: 150px;
+    height: 86.5px;
+    transition-delay: 1s;
+}
+
+.small {
+    width: 100px;
+    height: 57.67px;
+    transition-delay: 1s;
+}
+
+.hexagon::before, 
+.hexagon::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: white;
+    position: absolute;
+}
+
+.hexagon,
+.hexagon::before,
+.hexagon::after {
+    background: transparent;
+    border: 1px solid white;
+    border-top: none;
+    border-bottom: none;
+    -webkit-transition:  webkit-transform 1s ease-in-out;
+    -moz-transition: -moz-transform 1s ease-in-out;
+    -o-transition:  -o-transform 1s ease-in-out;
+    -ms-transition: -ms-transform 1s ease-in-out;
+    transition: transform 1s ease-in-out;
+}
+
+.hexagon::before {
+    transform: rotate(60deg);
+}
+
+.hexagon::after {
+    transform: rotate(-60deg);
+}
+
+.hexagon:hover {
+    transform: rotate(300deg);
+}
+.hexagon:hover::before {
+    transform: rotate(-120deg);
+}
+.hexagon:hover::after {
+    transform: rotate(120deg);
+}
+
+
+
+
+
+
+
+
+
 
 .random-blob {
     position: absolute;
