@@ -203,6 +203,11 @@ footer {
     position: relative;
     width: 100px;
     height: 100px;
+    -webkit-transition:  webkit-transform 1s ease-in-out;
+    -moz-transition: -moz-transform 1s ease-in-out;
+    -o-transition:  -o-transform 1s ease-in-out;
+    -ms-transition: -ms-transform 1s ease-in-out;
+    transition: transform 1s ease-in-out;
 }
 
 .hex {
@@ -213,6 +218,11 @@ footer {
     opacity: .5;
     -webkit-clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
     clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+    -webkit-transition:  webkit-transform 1s ease-in-out;
+    -moz-transition: -moz-transform 1s ease-in-out;
+    -o-transition:  -o-transform 1s ease-in-out;
+    -ms-transition: -ms-transform 1s ease-in-out;
+    transition: transform 1s ease-in-out;
   }
 
   .innerhex {
@@ -226,13 +236,20 @@ footer {
     z-index: 100;
     -webkit-clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
     clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+    pointer-events: none;
+    -webkit-transition:  webkit-transform 1s ease-in-out;
+    -moz-transition: -moz-transform 1s ease-in-out;
+    -o-transition:  -o-transform 1s ease-in-out;
+    -ms-transition: -ms-transform 1s ease-in-out;
+    transition: transform 1s ease-in-out;
   }
 
-  .hex:hover
+  .hex:hover,
+  .innerhex:hover
   {
-    transform: rotate(20deg);
-    opacity: 1;
+    transform: rotate(180deg);
   }
+
 
 
 
