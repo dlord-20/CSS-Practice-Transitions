@@ -218,6 +218,9 @@ footer {
 
 .hex-container {
     position: relative;
+    display: grid;
+    justify-items: center;
+    align-items: center;
     width: 100px;
     height: 100px;
     -webkit-transition:  webkit-transform 1s ease-in-out;
@@ -227,8 +230,11 @@ footer {
     transition: transform 1s ease-in-out;
 }
 
+.hex-container:hover {
+    transform: rotate(360deg);
+}
+
 .hex {
-    position: absolute;
     height: 100px;
     width: 100px;
     background: white;
@@ -240,20 +246,21 @@ footer {
     -o-transition:  -o-transform 1s ease-in-out;
     -ms-transition: -ms-transform 1s ease-in-out;
     transition: transform 1s ease-in-out;
+    grid-column-start: 1;
+    grid-row-start: 1;
+
   }
 
   .innerhex {
-    position: absolute;
-    height: 98%;
-    width: 98%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    cursor: pointer;
+    height: 95px;
+    width: 95px;
+    grid-column-start: 1;
+    grid-row-start: 1;
     background-color: #181A18;
     z-index: 100;
     -webkit-clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
     clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
-    pointer-events: none;
     -webkit-transition:  webkit-transform 1s ease-in-out;
     -moz-transition: -moz-transform 1s ease-in-out;
     -o-transition:  -o-transform 1s ease-in-out;
@@ -261,11 +268,10 @@ footer {
     transition: transform 1s ease-in-out;
   }
 
-  .hex:hover,
-  .innerhex:hover
-  {
+  /* .innerhex:hover   {
     transform: rotate(180deg);
-  }
+    background-color: #ff0;
+  } */
 
 
   /* End of Hexagons */
@@ -273,13 +279,10 @@ footer {
 /* Start of Buttons */
 /* https://mycolor.space/?hex=%2356B3A4&sub=1 Complete MolEvo Colors*/
 
-.button-container {
 
-}
-
-.button-container * {
-    /* border: 1px solid pink; */
-}
+/* .button-container * {
+    border: 1px solid pink;
+} */
 
 .buttons {
     padding: .6rem 1.5rem;
@@ -329,11 +332,12 @@ footer {
 
 /* Need to figure out how to make this happen right when you hover over button */
 .fa-arrow-right-long-hover {
+    padding-left: .1rem;
     transition: padding-left .3s ease-in-out;
 }
 
-.fa-arrow-right-long-hover:hover {
-    padding-left: 5px;
+.secondaryButton:hover .fa-arrow-right-long-hover {
+    padding-left: .4rem;
 }
 
 .greySecondaryButton {
