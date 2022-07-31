@@ -48,8 +48,8 @@ footer {
     position: relative;
 }
 
-.hidden-message a[test]:hover::after {
-    content: attr(test);
+.hidden-message a[title]:hover::after {
+    content: attr(title);
     position: absolute;
     top: 100%;
     left: 50%;
@@ -134,16 +134,29 @@ footer {
 
     position: absolute;
     background: white;
-    top: 50%;
-    left: 50%;
+    top: 40%;
+    left: 35%;
     transform: translate(-50%, -50%);
-    transform-origin: bottom left;
+    transform-origin: center center;
+    animation: spin 6000ms alternate infinite ease-in-out;
+}
+
+@keyframes spin {
+    0%, 7% {
+        transform: rotate(0deg);
+    }
+    42%, 58% {
+        transform: rotate(360deg);
+    }
+    93%, 100% {
+        transform: rotate(0deg);
+    }
 }
 
 .big {
     width: 300px;
     height: 173px;
-    transition-delay: 1s;
+    /* transition-delay: 1s; */
 }
 
 .medium {
@@ -158,38 +171,65 @@ footer {
     transition-delay: 1s;
 }
 
+.hexagon,
+.hexagon::before,
+.hexagon::after {
+    background: transparent;
+    border: 1.2px solid aqua;
+    border-top: none;
+    border-bottom: none;
+}
+
 .hexagon::before, 
 .hexagon::after {
     content: '';
     width: 100%;
     height: 100%;
-    background: white;
     position: absolute;
 }
 
-.hexagon,
-.hexagon::before,
-.hexagon::after {
-    background: transparent;
-    border: 1px solid white;
-    border-top: none;
-    border-bottom: none;
-    -webkit-transition:  webkit-transform 1s ease-in-out;
-    -moz-transition: -moz-transform 1s ease-in-out;
-    -o-transition:  -o-transform 1s ease-in-out;
-    -ms-transition: -ms-transform 1s ease-in-out;
-    transition: transform 1s ease-in-out;
-}
 
 .hexagon::before {
-    transform: rotate(60deg);
+    animation: spin-before 6000ms alternate infinite ease-in-out;
+
+    /* animation-name: spin-before;
+    animation-duration: 4000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; */
+}
+@keyframes spin-before {
+    0%, 7% {
+        transform: rotate(60deg);
+    }
+    42%, 58% {
+        transform: rotate(-120deg);
+    }
+    93%, 100% {
+        transform: rotate(60deg);
+    }
 }
 
 .hexagon::after {
-    transform: rotate(-60deg);
+    animation: spin-after 6000ms alternate infinite ease-in-out;
+
+    /* animation-name: spin-after;
+    animation-duration: 4000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; */
+}
+@keyframes spin-after {
+    0%, 7% {
+        transform: rotate(-60deg);
+    }
+    42%, 58% {
+        transform: rotate(120deg);
+    }
+    97%, 100% {
+        transform: rotate(-60deg);
+    }
 }
 
-.hexagon:hover {
+/* .hexagon:hover {
     transform: rotate(300deg);
 }
 .hexagon:hover::before {
@@ -197,7 +237,7 @@ footer {
 }
 .hexagon:hover::after {
     transform: rotate(120deg);
-}
+} */
 
 .hex-container {
     position: relative;
