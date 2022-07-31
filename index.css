@@ -87,7 +87,7 @@ footer {
     content: '\007c';
     display: inline-block;
     height: 1.28rem;
-    color:aqua;
+    color: #56b3a4;
     opacity: .4;
     cursor: pointer;
     position: absolute;
@@ -153,8 +153,9 @@ footer {
 .hexagon,
 .hexagon::before,
 .hexagon::after {
+    /* box-sizing: content-box; */
     background: transparent;
-    border: 1.3px solid aqua;
+    border: 1.3px solid #56b3a4;
     border-radius: 3px;
     border-top: transparent;
     border-bottom: transparent;
@@ -293,8 +294,9 @@ footer {
 }
 
 #MyGradient {
-    --color-stop: aqua;
-    --color-begin: lightgreen;
+    /* background-image: linear-gradient(to right, #56b3a4, #053a31); */
+    --color-stop: #56b3a4;
+    --color-begin: #071c23;
 }
 
 /* background-image: url("data:image/svg+xml;base64,ICAgICAgICAgICAgPHN2ZyB2aWV3Qm94PSAiLTgwIDEwMCAyMDAgMjAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgICAgICAgICAgICAgPHBhdGggZmlsbD0iI0ZGMDA2NiIgZD0iTTQyLjQsLTQ1QzUxLjMsLTQzLjEsNTIuMiwtMjYuMiw1MS41LC0xMS44QzUwLjgsMi42LDQ4LjMsMTQuNSw0MS44LDIyLjZDMzUuMywzMC43LDI0LjgsMzUsMTEuOSw0NUMtMSw1NSwtMTYuMyw3MC44LC0yNC41LDY3LjdDLTMyLjcsNjQuNSwtMzMuOSw0Mi40LC0zOS45LDI2Qy00NS44LDkuNiwtNTYuNSwtMS4xLC01MS4xLC01Qy00NS43LC04LjksLTI0LjEsLTYsLTEyLjksLTcuNUMtMS43LC05LC0wLjksLTE0LjksOCwtMjQuNEMxNi44LC0zMy45LDMzLjUsLTQ2LjksNDIuNCwtNDVaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMDAgMTAwKSIgLz4KICAgICAgICAgICAgPC9zdmc+") */
