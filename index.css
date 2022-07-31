@@ -130,12 +130,21 @@ footer {
     border: 2px green solid;
 }
 
-.hexagon {
+/* Hexagons */
 
+.hexagon-container {
+    position: relative;
+    width: 100px;
+    height: 125px;
+}
+
+.hexagon {
     position: absolute;
     background: white;
-    top: 40%;
-    left: 35%;
+    top: 10px;
+    left: 20px;
+    /* top: 40%;
+    left: 35%; */
     transform: translate(-50%, -50%);
     transform-origin: center center;
     animation: spin 6000ms alternate infinite ease-in-out;
@@ -176,8 +185,9 @@ footer {
 .hexagon::after {
     background: transparent;
     border: 1.2px solid aqua;
-    border-top: none;
-    border-bottom: none;
+    border-radius: 3px;
+    border-top: transparent;
+    border-bottom: transparent;
 }
 
 .hexagon::before, 
@@ -291,8 +301,10 @@ footer {
   }
 
 
+  /* End of Hexagons */
 
 
+  
 
 
 
