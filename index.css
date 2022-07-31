@@ -130,61 +130,31 @@ footer {
     border: 2px green solid;
 }
 
-/* Hexagons */
+/* Hexagons - Loading Icon */
 
 .hexagon-container {
     position: relative;
-    width: 100px;
-    height: 125px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid pink;
+    width: 200px;
+    height: 200px;
 }
 
 .hexagon {
-    position: absolute;
     background: white;
-    top: 10px;
-    left: 20px;
-    /* top: 40%;
-    left: 35%; */
-    transform: translate(-50%, -50%);
     transform-origin: center center;
     animation: spin 6000ms alternate infinite ease-in-out;
-}
-
-@keyframes spin {
-    0%, 7% {
-        transform: rotate(0deg);
-    }
-    42%, 58% {
-        transform: rotate(360deg);
-    }
-    93%, 100% {
-        transform: rotate(0deg);
-    }
-}
-
-.big {
-    width: 300px;
-    height: 173px;
-    /* transition-delay: 1s; */
-}
-
-.medium {
-    width: 150px;
-    height: 86.5px;
-    transition-delay: 1s;
-}
-
-.small {
-    width: 100px;
-    height: 57.67px;
-    transition-delay: 1s;
+    width: 3rem;
+    height: 1.7301rem;
 }
 
 .hexagon,
 .hexagon::before,
 .hexagon::after {
     background: transparent;
-    border: 1.2px solid aqua;
+    border: 1.3px solid aqua;
     border-radius: 3px;
     border-top: transparent;
     border-bottom: transparent;
@@ -201,12 +171,24 @@ footer {
 
 .hexagon::before {
     animation: spin-before 6000ms alternate infinite ease-in-out;
-
-    /* animation-name: spin-before;
-    animation-duration: 4000ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear; */
 }
+
+.hexagon::after {
+    animation: spin-after 6000ms alternate infinite ease-in-out;
+}
+
+@keyframes spin {
+    0%, 7% {
+        transform: rotate(0deg);
+    }
+    42%, 58% {
+        transform: rotate(360deg);
+    }
+    93%, 100% {
+        transform: rotate(0deg);
+    }
+}
+
 @keyframes spin-before {
     0%, 7% {
         transform: rotate(60deg);
@@ -219,14 +201,6 @@ footer {
     }
 }
 
-.hexagon::after {
-    animation: spin-after 6000ms alternate infinite ease-in-out;
-
-    /* animation-name: spin-after;
-    animation-duration: 4000ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear; */
-}
 @keyframes spin-after {
     0%, 7% {
         transform: rotate(-60deg);
@@ -239,15 +213,7 @@ footer {
     }
 }
 
-/* .hexagon:hover {
-    transform: rotate(300deg);
-}
-.hexagon:hover::before {
-    transform: rotate(-120deg);
-}
-.hexagon:hover::after {
-    transform: rotate(120deg);
-} */
+/* End of Hexagon Loading Icon */
 
 .hex-container {
     position: relative;
@@ -304,7 +270,7 @@ footer {
   /* End of Hexagons */
 
 
-  
+
 
 
 
