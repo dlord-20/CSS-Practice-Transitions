@@ -8,8 +8,9 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
  * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
 body {
-    background-color: #181A18;
-    color: whitesmoke;
+    /* background-color: #181A18; */
+    background-color: whitesmoke;
+    color: #181A18;
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
@@ -223,6 +224,7 @@ footer {
     align-items: center;
     width: 100px;
     height: 100px;
+    margin: 1rem;
     -webkit-transition:  webkit-transform 1s ease-in-out;
     -moz-transition: -moz-transform 1s ease-in-out;
     -o-transition:  -o-transform 1s ease-in-out;
@@ -234,10 +236,12 @@ footer {
     transform: rotate(360deg);
 }
 
+/* Might be able to do a hover with sibling selector */
+
 .hex {
     height: 100px;
     width: 100px;
-    background: white;
+    background: #56b3a4;
     opacity: .5;
     -webkit-clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
     clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
@@ -257,7 +261,7 @@ footer {
     width: 95px;
     grid-column-start: 1;
     grid-row-start: 1;
-    background-color: #181A18;
+    background-color: whitesmoke;
     z-index: 100;
     -webkit-clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
     clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
@@ -267,11 +271,6 @@ footer {
     -ms-transition: -ms-transform 1s ease-in-out;
     transition: transform 1s ease-in-out;
   }
-
-  /* .innerhex:hover   {
-    transform: rotate(180deg);
-    background-color: #ff0;
-  } */
 
 
   /* End of Hexagons */
@@ -290,11 +289,13 @@ footer {
     border-radius: .5rem;
     cursor: pointer;
     margin: 1rem;
-    transition: background-color .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    color: whitesmoke;
 }
 
 .primaryButton {
     background-color: #56b3a4;
+    box-shadow: 0 3px 10px #a5aaa5;
 }
 
 .primaryButton:hover {
@@ -318,6 +319,13 @@ footer {
     border-radius: 0px;
     cursor: pointer;
 }
+
+.secondaryButton,
+.secondaryButton2,
+.flatButton {
+    color: #181A18;
+}
+
 .secondaryButton:after {
     transition: all ease-in-out .3s;
     background: none repeat scroll 0 0 #56b3a4;
@@ -336,12 +344,14 @@ footer {
     transition: padding-left .3s ease-in-out;
 }
 
-.secondaryButton:hover .fa-arrow-right-long-hover {
+.secondaryButton:hover .fa-arrow-right-long-hover, 
+.secondaryButton2:hover .fa-arrow-right-long-hover {
     padding-left: .4rem;
 }
 
 .greySecondaryButton {
     background-color: #606B72;
+    box-shadow: 0 3px 10px #a5aaa5;
 }
 
 .greySecondaryButton:hover {
@@ -349,12 +359,11 @@ footer {
 }
 
 .flatButton {
-    border-radius: 0px;
-    border: 1px solid transparent;
+    border: 2px solid transparent;
 }
 
 .flatButton:hover {
-    border: 1px solid #56b3a4;
+    border: 2px solid #56b3a4;
 }
 
 .hyperlink {
@@ -370,7 +379,52 @@ footer {
 /* End of Buttons */
 
 
+/* Icons */
+.icons-container {
+    display: flex;
+}
 
+.icon-container {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 1rem;
+    box-shadow: 0 3px 10px #a5aaa5;
+    transition: all .3s ease-in-out;
+}
+
+.circle-teal {
+    background-color: #56b3a4;
+}
+
+.circle-teal:hover {
+    background-color: #147E70;
+}
+
+.icon-white {
+    color: whitesmoke;
+}
+
+.circle-blue {
+    background-color: #071c23;
+}
+
+.circle-blue:hover {
+    background-color: #02090b;
+}
+
+.icon-teal {
+    color: #56b3a4;
+}
+
+
+
+
+/* End of Icons */
 
 
 
