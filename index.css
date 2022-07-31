@@ -283,6 +283,9 @@ footer {
 /* Start of Buttons */
 /* https://mycolor.space/?hex=%2356B3A4&sub=1 Complete MolEvo Colors*/
 
+.test {
+    display: flex;
+}
 
 /* .button-container * {
     border: 1px solid pink;
@@ -293,7 +296,7 @@ footer {
     width: fit-content;
     border-radius: .5rem;
     cursor: pointer;
-    margin: 1rem;
+    margin: .5rem;
     transition: all .3s ease-in-out;
     color: whitesmoke;
 }
@@ -323,10 +326,11 @@ footer {
 .secondaryButton {
     border-radius: 0px;
     cursor: pointer;
+    padding: .4rem 1.8rem 0rem 1.8rem;
 }
 
 .secondaryButton p {
-    padding: .5rem 0;
+    padding: .45rem 0;
 }
 
 .secondaryButton,
@@ -448,13 +452,13 @@ footer {
     grid-template-columns: repeat(6, 1fr);
     justify-content: center;
     align-items: center;
-    border: 1px solid pink;
+    /* border: 1px solid pink; */
     max-width: 75%;
 }
 
 .quote {
     grid-column: 2 / 6;
-    border: 2px solid green;
+    /* border: 2px solid green; */
     grid-row: 1;
     font-size: 1.5rem;
     align-self: center;
@@ -474,14 +478,24 @@ footer {
 .quote-img {
     grid-column: 2 / 3;
     grid-row: 2 / 4;
-    border: 1px red solid;
+    /* border: 1px red solid; */
     justify-self: end;
+    max-width: 100px;
+    margin-top: 1rem;
+    margin-right: 1.8rem;
+
+}
+
+.quote-img img {
+    max-width: 100px;
+    border-radius: 50px;    
+    box-shadow: 5px 3px 10px #a5aaa5;    
 }
 
 .quote-name {
     grid-column: 3 / 6;
     font-size: 1.2rem;    
-    border: 2px solid green;
+    /* border: 2px solid green; */
     align-self: end;
 }
 
@@ -491,8 +505,9 @@ footer {
 
 .quote-title {
     grid-column: 3 / 6;
-    border: 2px solid green;
+    /* border: 2px solid green; */
     align-self: start;
+    font-style: italic;
 }
 
 
