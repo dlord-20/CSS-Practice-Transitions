@@ -439,6 +439,31 @@ footer {
 
 /* End of Icons */
 
+/* Social Links */
+
+.social-container {
+    display: flex;
+    width: fit-content;
+}
+
+.social-container:hover > *:not(:hover) {
+    opacity: .5;
+}
+
+.social-icon {
+    padding: 1rem;   
+    font-size: 1.5rem;
+    cursor: pointer;
+
+}
+
+.social-icon:hover ~ div {
+    opacity: .5;
+}
+
+
+/* End of Social Links */
+
 /* Quotes */
 
 .center {
