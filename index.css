@@ -624,16 +624,14 @@ footer {
     height: 400px;
 }
 
+
+/* Change js to add some extra width too */
 .box {
     width: 200px;
     margin: 1rem;
     position: relative;
     top: 0;
     transition: all .4s ease-in-out;
-}
-
-.box:hover {
-    top: -25px;
 }
 
 .box-img {
@@ -646,6 +644,9 @@ footer {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    /* box-shadow: 0 3px 10px #a5aaa5; */
 }
 
 .box-text {
@@ -656,6 +657,9 @@ footer {
     align-items: center;
     border: 1px solid gray;
     transition: all .4s ease-in-out;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    /* box-shadow: 0 3px 10px #a5aaa5; */
 }
 
 /* End of Box slider */

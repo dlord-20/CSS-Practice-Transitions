@@ -29,17 +29,20 @@ const handleHoverEnter = (e) => {
     const max = (e === boxes.length - 1);
 
     boxes[e].style.top = '-25px';
+    boxes[e].style.width = '250px';
     boxImages[e].style.height = '175px';
     boxTexts[e].style.height = '200px'
     if(!zero) {
         addTopStyle(boxes[e - 1]);
         addTransparency(boxes[e - 1], adjacentTransparency);
+        boxes[e - 1].style.width = '220px';
         boxImages[e - 1].style.height = '165px';
         boxTexts[e - 1].style.height = '185px';
     }
     if(!max) {
         addTopStyle(boxes[e + 1]);
         addTransparency(boxes[e + 1], adjacentTransparency);
+        boxes[e + 1].style.width = '220px';
         boxImages[e + 1].style.height = '165px';
         boxTexts[e + 1].style.height = '185px';
     }
@@ -55,6 +58,7 @@ const handleHoverExit = (e) => {
     boxes.forEach((element) => {
         removeTopStyle(element);
         removeTransparency(element);
+        element.style.width = '200px';
     })
     boxImages.forEach((element) => {
         element.style.height = '150px';
