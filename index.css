@@ -346,9 +346,11 @@ footer {
     display: block;
     height: 2px;
     width: 0;
+
 }
 .secondaryButton:hover:after {
     width: 100%;
+    padding-right: .4rem;
 }
 
 /* Need to figure out how to make this happen right when you hover over button */
@@ -643,6 +645,19 @@ footer {
 }
 
 .reveal-item.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.reveal-test {
+    position: relative;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: 1s all ease-in-out;
+    margin: 1rem;
+}
+
+.reveal-test.active {
     transform: translateY(0);
     opacity: 1;
 }
