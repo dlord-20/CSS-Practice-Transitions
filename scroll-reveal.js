@@ -1,3 +1,16 @@
+const revealItem = (item) => {
+    var windowHeight = window.innerHeight;
+    var elementTop = item.getBoundingClientRect().top;
+    var elementVisible = 200;
+
+    if (elementTop < windowHeight - elementVisible) {
+      reveals[i].classList.add("active");
+    } else {
+      reveals[i].classList.remove("active");
+    }
+    
+}
+
 const reveal = () => {
     var reveals = document.querySelectorAll(".reveal");
   
@@ -12,6 +25,9 @@ const reveal = () => {
         reveals[i].classList.remove("active");
       }
     }
-  }
+
+
+
+}
   
-  window.addEventListener("scroll", () => reveal());
+window.addEventListener("scroll", () => reveal());
