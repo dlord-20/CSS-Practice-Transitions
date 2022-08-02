@@ -625,7 +625,16 @@ footer {
     border: 1px solid pink;
 }
 
-.reveal {
+.reveal-container {
+    opacity: 0;
+    transition: 1s all ease-in-out;
+}
+
+.reveal-active {
+    opacity: 1;
+}
+
+.reveal-item {
     position: relative;
     transform: translateY(50px);
     opacity: 0;
@@ -633,10 +642,12 @@ footer {
     margin: 1rem;
 }
 
-.reveal.active {
+.reveal-item.active {
     transform: translateY(0);
     opacity: 1;
 }
+
+
 
 /* Change js to add some extra width too */
 .box {
