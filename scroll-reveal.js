@@ -65,7 +65,7 @@ const revealSecondGroup = () => {
     containers.forEach((container) => {
         const item = container;
         setTimeout(() => itemReveal(item), time);
-        time *= 1.15;
+        time *= 1.05;
         
     })
 
