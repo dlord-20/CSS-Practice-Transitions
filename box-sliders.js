@@ -1,3 +1,5 @@
+// Start of Box-Slider 
+
 const boxes = document.querySelectorAll('.box');
 const boxImages = document.querySelectorAll('.box-img');
 const boxTexts = document.querySelectorAll('.box-text');
@@ -88,3 +90,5 @@ boxes.forEach((element, index) => {
     element.addEventListener('mouseover', () => handleHoverEnter(index));
     element.addEventListener('mouseout', () => handleHoverExit(index));
 });
+
+// End of Box Slider
