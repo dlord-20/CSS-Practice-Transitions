@@ -29,25 +29,29 @@ const reveal = () => {
 const disappear = () => {
     var reveals = document.querySelectorAll(".reveal-item");
     for (var i = 0; i < reveals.length; i++) {
-        disappearItem(reveals[i]);
+        const item = reveals[i];
+        disappearItem(item);
     }
 
 }
 
 const revealContainer = () => {
-    const container = document.querySelectorAll(".reveal-container");
-    const item = container[0];
-    var windowHeight = window.innerHeight;
-    var elementTop = item.getBoundingClientRect().top;
-    var elementVisible = 200;
+    const containers = document.querySelectorAll(".reveal-container");
+    containers.forEach((container) => {
+        const item = container;
+        var windowHeight = window.innerHeight;
+        var elementTop = item.getBoundingClientRect().top;
+        var elementVisible = 200;
+    
+        if (elementTop < windowHeight - elementVisible) {
+          item.classList.add("reveal-active");
+          reveal();
+        } else {
+          item.classList.remove("reveal-active");
+          disappear();
+        }
+    })
 
-    if (elementTop < windowHeight - elementVisible) {
-      item.classList.add("reveal-active");
-      reveal();
-    } else {
-      item.classList.remove("reveal-active");
-      disappear();
-    }
 }
 
 window.addEventListener("scroll", () => revealContainer());
