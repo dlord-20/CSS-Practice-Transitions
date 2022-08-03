@@ -1,13 +1,14 @@
 .menu-container {
     position: absolute;
     width: 100%;
-    height: 100px;
 }
 
 .menu {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 75px;
+    background-color: antiquewhite;
 }
 
 .nav-logo {
@@ -28,12 +29,17 @@
 }
 
 .nav-links > div:not(.buttons) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 1rem 1.5rem;
     cursor: pointer;
+    height: 75px;
 }
 
 .nav-links:hover > div:not(.buttons) {
     opacity: .5;
+
 }
 
 .nav-links div:hover {
@@ -41,23 +47,34 @@
 }
 
 .nav-home-sub,
-.nav-software-sub
-{
-    width: 0;
-    position: absolute;
-    height: 0px;
-    transition: all .3s ease-in-out;
-    overflow: hidden;
-}
-
-.nav-home:hover .nav-home-sub,
-.nav-software:hover .nav-software-sub
+.nav-software-sub,
+.nav-about-sub
 {
     width: 100%;
     left: 50%;
+    top: 75px;
     transform: translateX(-50%);
+    position: absolute;
+    height: 0px;
+    overflow: hidden;
+    z-index: 2000;
+
+}
+
+.nav-home:hover .nav-home-sub,
+.nav-software:hover .nav-software-sub,
+.nav-about:hover .nav-about-sub
+{
+    width: 100%;
     background-color: whitesmoke;
     height: 150px;
-    border: 1px solid black;
-    
+    transition: all .3s ease-in;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black
+}
+
+.sub-menu {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
 }
