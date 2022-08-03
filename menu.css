@@ -1,0 +1,36 @@
+.menu {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 200px;
+}
+
+.nav-logo {
+    display: flex;
+}
+
+.nav-logo img {
+    width: 50px;
+    height: 50px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+
+}
+
+.nav-links p {
+    cursor: pointer;
+}
+
+.nav-home-sub,
+.nav-software-sub
+{
+    display: none;
+    transition: display 1s ease-in-out;
+}
+
+.nav-home:hover .nav-home-sub {
+    display: block;
+}
