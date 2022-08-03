@@ -8,11 +8,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: relative;
 }
 
 .nav-logo {
     display: flex;
+    align-items: center;
 }
 
 .nav-logo img {
@@ -24,11 +24,20 @@
     display: flex;
     justify-content: space-around;
     width: 60%;
-
+    align-items: center;
 }
 
-.nav-links p {
+.nav-links > div:not(.buttons) {
+    padding: 1rem 1.5rem;
     cursor: pointer;
+}
+
+.nav-links:hover > div:not(.buttons) {
+    opacity: .5;
+}
+
+.nav-links div:hover {
+    opacity: 1 !important;
 }
 
 .nav-home-sub,
