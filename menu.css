@@ -4,7 +4,9 @@
     max-width: 1200px;
     left: 50%;
     transform: translateX(-50%);
-    border-bottom: 1px solid #071c23;
+    border: 1px solid #071c23;
+    border-top: none;
+
     z-index: 50;
 }
 
@@ -44,7 +46,6 @@
 
 .nav-links:hover > div:not(.buttons) {
     opacity: .5;
-
 }
 
 .nav-links div:hover {
@@ -81,6 +82,8 @@
     z-index: 2000;
     cursor: default;
     background-color: whitesmoke;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 .nav:hover .nav-sub {
@@ -106,6 +109,20 @@
     grid-column: span 2;
 }
 
+.sub-menu-details {
+    background-color: #071c23;
+    color: aliceblue;
+}
+
+.sub-menu-details h4 {
+    font-size: 1.2rem;
+    margin-bottom: .5rem;
+}
+
+.sub-menu-details p {
+    font-size: .9rem;
+}
+
 .sub-menu-heading {
     border-bottom: 1.5px solid black;
     font-weight: 700;
@@ -113,7 +130,7 @@
     cursor: auto;
 }
 
-.sub-menu div p:not(:first-child) {
+.sub-menu div:not(.sub-menu-details) p:not(:first-child) {
     cursor: pointer;
     margin: 5px 0px;
     padding: 5px 5px 5px 0;
@@ -121,12 +138,12 @@
     transition: all .2s ease-in-out;
 }
 
-.sub-menu div p:not(:first-child):hover {
+.sub-menu div:not(.sub-menu-details) p:not(:first-child):hover {
     opacity: 1 !important;
     margin-left: 5px;
 }
 
-.sub-menu div:hover p:not(:first-child) {
+.sub-menu div:not(.sub-menu-details):hover p:not(:first-child) {
     opacity: .5;
 }
 
