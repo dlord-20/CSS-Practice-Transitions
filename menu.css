@@ -46,39 +46,6 @@
     opacity: 1 !important;
 }
 
-.nav-home-sub,
-.nav-software-sub,
-.nav-about-sub
-{
-    width: 100%;
-    left: 50%;
-    top: 75px;
-    transform: translateX(-50%);
-    position: absolute;
-    height: 0px;
-    overflow: hidden;
-    z-index: 2000;
-
-}
-
-.nav-home:hover .nav-home-sub,
-.nav-software:hover .nav-software-sub,
-.nav-about:hover .nav-about-sub
-{
-    width: 100%;
-    background-color: whitesmoke;
-    height: 150px;
-    transition: all .45s;
-    border-bottom: 1px solid black;
-    border-top: 1px solid black
-}
-
-.sub-menu {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 10px;
-}
-
 .highlight {
     position: absolute;
     top: 80px;
@@ -90,12 +57,41 @@
     border-radius: 5px;
 }
 
-.nav-home:hover .highlight,
-.nav-software:hover .highlight,
 .nav:hover .highlight
 {
     top: 68px;
     height: 25px;
     width: 25px;
     transition: all .2s ease-in .25s;
+    
 }
+
+.nav-sub
+{
+    width: 100%;
+    left: 50%;
+    top: 75px;
+    transform: translateX(-50%);
+    position: absolute;
+    height: 0px;
+    overflow: hidden;
+    z-index: 2000;
+    cursor: default;
+}
+
+.nav:hover .nav-sub
+{
+    width: 100%;
+    background-color: whitesmoke;
+    height: 150px;
+    transition: all .45s ease-out;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black
+}
+
+.sub-menu {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+}
+
