@@ -320,11 +320,7 @@ footer {
 
 .disabled {
     background-color: #97B1AB;
-    cursor: auto;
-}
-
-.disabled p {
-    cursor: default;
+    cursor: not-allowed;
 }
 
 .secondaryButton {
