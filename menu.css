@@ -199,6 +199,7 @@
 
     .hamburger-checkbox {
         opacity: 0;
+        top: 5px;
     }
 
     .hamburger::before {
@@ -276,13 +277,6 @@
         border-left: 1px solid #071c23;
     }
 
-
-    /* Issue with it being 1 pixel to high */
-    /* .nav-links .nav:first-child {
-        box-sizing: border-box;
-        border-top: 1px solid #071c23;
-    } */
-
     .nav-links > div:nth-last-child(2){
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
@@ -293,10 +287,7 @@
         padding: 1rem 0;
     }
 
-    .nav-sub {
-        position: absolute;
-        display: none;
-    }
+
 
     .highlight {
         display: none;
@@ -312,7 +303,7 @@
     }
 
     .nav-checkbox:checked {
-        z-index: 5001; 
+        z-index: 5002; 
         width: 40px;
         height: 40px;
         top: 0;
@@ -349,22 +340,31 @@
     }
 
     /* Need to figure this out */
-    /* .nav-checkbox:checked ~ .nav-mobile-x:hover::before,
-    .nav-checkbox:checked ~ .nav-mobile-x:hover::after
+    .nav-checkbox:checked:hover ~ .nav-mobile-x::before,
+    .nav-checkbox:checked:hover ~ .nav-mobile-x::after
     {
-        opacity: .5;
-        z-index: 10000;
-    } */
+        border-color: #586774;
+        z-index: 5001;
+    }
+
+
+    .nav-sub {
+        position: absolute;
+        height: 0;
+        transition: all .8s ease-in;
+        top: 2.5px;
+    }
+    
+    .nav:hover .nav-sub {
+        border: none !important;
+    }
 
     .nav-checkbox:checked ~ .nav-sub {
-        display: block;
-        width: 100%;
         max-height: 1000px;
-        border: 1px solid #071c23;
-        /* border-top: 1px solid #071c23; */
+        height: fit-content;
+        border: 1px solid #071c23  !important;
         transition: all .8s ease-in;
-        position: absolute;
-        top: 0;
+        display: block;
     }
 
 }
