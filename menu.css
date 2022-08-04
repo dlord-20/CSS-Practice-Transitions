@@ -27,7 +27,9 @@
     height: 50px;
 }
 
-.hamburger {
+.hamburger,
+.hamburger-checkbox 
+{
     display: none;
 }
 
@@ -74,6 +76,10 @@
     
 }
 
+.nav-checkbox {
+    display: none;
+}
+
 .nav-sub {
     width: 100%;
     left: 50%;
@@ -95,7 +101,6 @@
     border-bottom: 1px solid #071c23;
     border-top: 1px solid #071c23;
     transition: all .8s ease-in;
-
 }
 
 .sub-menu {
@@ -211,11 +216,11 @@
         display: none;
     }
 
-    #hamburger:checked ~ .hamburger {
+    .hamburger-checkbox:checked ~ .hamburger {
         border: none;
     }
 
-    #hamburger:checked ~ .hamburger::before {
+    .hamburger-checkbox:checked ~ .hamburger::before {
         display: inline-block;
         position: absolute;
         transform: rotate(45deg);
@@ -223,7 +228,7 @@
         right: 12px;
     }
 
-    #hamburger:checked ~ .hamburger::after {
+    .hamburger-checkbox:checked ~ .hamburger::after {
         display: inline-block;
         position: absolute;
         transform: rotate(-45deg);
@@ -231,15 +236,15 @@
         right: -12px;
     }
 
-    #hamburger:checked ~ .hamburger:hover::before,
-    #hamburger:checked ~ .hamburger:hover::after
+    .hamburger-checkbox:checked ~ .hamburger:hover::before,
+    .hamburger-checkbox:checked ~ .hamburger:hover::after
     {
         /* This needs to be a border color instead because the opacity currently makes a little square in the middle of the x */
         opacity: .5;
     }
 
 
-    #hamburger:checked ~ .nav-links {
+    .hamburger-checkbox:checked ~ .nav-links {
         display: flex;
     }
 
@@ -258,4 +263,78 @@
     .nav-links .nav {
         width: 100%;
     }
+
+    .nav-sub {
+        position: absolute;
+    }
+
+    .nav-checkbox {
+        display: block;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        position: absolute;
+        opacity: 0;
+    }
+
+    .highlight {
+        display: none;
+    }
+
+    .nav-sub {
+        display: none;
+    }
+
+    .nav:hover .nav-sub {
+        width: 0;
+        max-height: 0;
+        border: none;
+    }
+
+    .nav-checkbox:checked {
+        z-index: 5001;
+    }
+
+    .nav-checkbox:checked ~ .nav-mobile-x::before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: 25px;
+        right: 32px;
+        border-top: 2.5px solid #dee7ef;
+        width: 35px;
+        height: 35px;
+        transition: all .3s ease-in-out;
+        z-index: 5000;
+        transform: rotate(45deg);
+    }
+
+    .nav-checkbox:checked ~ .nav-mobile-x::after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: 25px;
+        right: 8px;
+        border-top: 2.5px solid #dee7ef;
+        width: 35px;
+        height: 35px;
+        transition: all .3s ease-in-out;
+        z-index: 5000;
+        transform: rotate(-45deg);
+
+    }
+
+    .nav-checkbox:checked ~ .nav-sub {
+        display: block;
+        width: 100%;
+        max-height: 1000px;
+        border-bottom: 1px solid #071c23;
+        border-top: 1px solid #071c23;
+        transition: all .8s ease-in;
+        position: absolute;
+        top: 0;
+    }
+
+
+
 }
