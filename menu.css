@@ -25,6 +25,7 @@
 .nav-logo img {
     width: 50px;
     height: 50px;
+    margin: 40px;
 }
 
 .hamburger,
@@ -62,7 +63,6 @@
     top: 80px;
     transform: rotate(45deg);
     width: 0;
-    /* height: 25px; */
     background-color: #071c23;
     height: 0;
     border-radius: 5px;
@@ -73,7 +73,6 @@
     height: 25px;
     width: 25px;
     transition: all .4s ease-in;
-    
 }
 
 .nav-checkbox {
@@ -121,6 +120,7 @@
     background-color: #071c23;
     color: aliceblue;
     font-weight: 100;
+    border: none;
 }
 
 .sub-menu-details h4 {
@@ -153,6 +153,7 @@
 .sub-menu div:not(.sub-menu-details) p:not(:first-child):hover {
     opacity: 1 !important;
     margin-left: 5px;
+    
 }
 
 .sub-menu div:not(.sub-menu-details):hover p:not(:first-child) {
@@ -240,6 +241,8 @@
     .hamburger-checkbox:checked ~ .hamburger:hover::after
     {
         border-color: #586774;
+        transition: all .2s ease-in-out;
+
     }
 
 
@@ -250,39 +253,42 @@
     .nav-links {
         position: absolute;
         right: 0;
-        top: 76px;
+        top: 75px;
         flex-direction: column;
         background-color: white;
-        border: 1px solid #071c23;
-        border-top: none;
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
     }
 
     .nav-links .nav {
         width: 100%;
+        border-right: 1px solid #071c23;
+        border-left: 1px solid #071c23;
+    }
+
+    /* Issue with it being 1 pixel to high */
+    /* .nav-links .nav:first-child {
+        box-sizing: border-box;
+        border-top: 1px solid #071c23;
+    } */
+
+    .nav-links div:nth-last-child(2) {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border-bottom: 1px solid #071c23;
     }
 
     .nav-sub {
         position: absolute;
         display: none;
-        border: 1px solid #071c23;
     }
 
     .highlight {
         display: none;
     }
 
-    .nav:hover .nav-sub {
-        width: 0;
-        max-height: 0;
-    }
-
     .nav-checkbox {
         display: block;
         width: 100%;
         height: 75px;
-        /* top: 75px; */
         cursor: pointer;
         position: absolute;
         opacity: 0;
@@ -323,20 +329,25 @@
         transition: all .3s ease-in-out;
         z-index: 5000;
         transform: rotate(-45deg);
+    }
 
+    /* Need to figure this out */
+    .nav-checkbox:checked ~ .nav-mobile-x:hover::before,
+    .nav-checkbox:checked ~ .nav-mobile-x:hover::after
+    {
+        opacity: .5;
+        z-index: 10000;
     }
 
     .nav-checkbox:checked ~ .nav-sub {
         display: block;
         width: 100%;
         max-height: 1000px;
-        border-bottom: 1px solid #071c23;
-        border-top: 1px solid #071c23;
+        border: 1px solid #071c23;
+        /* border-top: 1px solid #071c23; */
         transition: all .8s ease-in;
         position: absolute;
         top: 0;
     }
-
-
 
 }
