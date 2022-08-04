@@ -239,8 +239,7 @@
     .hamburger-checkbox:checked ~ .hamburger:hover::before,
     .hamburger-checkbox:checked ~ .hamburger:hover::after
     {
-        /* This needs to be a border color instead because the opacity currently makes a little square in the middle of the x */
-        opacity: .5;
+        border-color: #586774;
     }
 
 
@@ -266,33 +265,36 @@
 
     .nav-sub {
         position: absolute;
-    }
-
-    .nav-checkbox {
-        display: block;
-        width: 100%;
-        height: 100%;
-        cursor: pointer;
-        position: absolute;
-        opacity: 0;
+        display: none;
+        border: 1px solid #071c23;
     }
 
     .highlight {
         display: none;
     }
 
-    .nav-sub {
-        display: none;
-    }
-
     .nav:hover .nav-sub {
         width: 0;
         max-height: 0;
-        border: none;
+    }
+
+    .nav-checkbox {
+        display: block;
+        width: 100%;
+        height: 75px;
+        /* top: 75px; */
+        cursor: pointer;
+        position: absolute;
+        opacity: 0;
     }
 
     .nav-checkbox:checked {
-        z-index: 5001;
+        z-index: 5001; 
+        width: 40px;
+        height: 40px;
+        top: 0;
+        right: 0;
+        margin: 15px;
     }
 
     .nav-checkbox:checked ~ .nav-mobile-x::before {
