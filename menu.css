@@ -5,6 +5,7 @@
     left: 50%;
     transform: translateX(-50%);
     border: 1px solid #071c23;
+    box-sizing: border-box;
     border-top: none;
     z-index: 50;
 }
@@ -23,9 +24,10 @@
 }
 
 .nav-logo img {
-    width: 50px;
-    height: 50px;
-    margin: 40px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 150px;
+    margin-left: 1rem;
 }
 
 .hamburger,
@@ -80,9 +82,10 @@
 }
 
 .nav-sub {
-    width: 100%;
+    box-sizing: border-box;
+    width: 100.2%;
     left: 50%;
-    top: 75px;
+    top: 76px;
     transform: translateX(-50%);
     position: absolute;
     max-height: 0px;
@@ -95,8 +98,9 @@
 }
 
 .nav:hover .nav-sub {
-    width: 100%;
+    /* width: 100%; */
     max-height: 1000px;
+    border-right: 1px solid #071c23;
     border-bottom: 1px solid #071c23;
     border-top: 1px solid #071c23;
     transition: all .8s ease-in;
@@ -120,7 +124,8 @@
     background-color: #071c23;
     color: aliceblue;
     font-weight: 100;
-    border: none;
+    /* border: 5px solid pink; */
+    margin-bottom: none;
 }
 
 .sub-menu-details h4 {
@@ -136,7 +141,7 @@
 }
 
 .sub-menu-heading {
-    border-bottom: 1.5px solid black;
+    border-bottom: 1.5px solid #071c23;
     font-weight: 700;
     padding: 5px 5px 5px 0;
     cursor: auto;
@@ -160,7 +165,15 @@
     opacity: .5;
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 1200px) {
+    .menu-container {
+        border: none;
+        border-bottom: 1px solid #071c23;
+    }
+
+}
+
+@media only screen and (max-width: 800px) {
     .menu-container .buttons {
         display: none;
     }
@@ -264,16 +277,21 @@
         border-left: 1px solid #071c23;
     }
 
+
     /* Issue with it being 1 pixel to high */
     /* .nav-links .nav:first-child {
         box-sizing: border-box;
         border-top: 1px solid #071c23;
     } */
 
-    .nav-links div:nth-last-child(2) {
+    .nav-links > div:nth-last-child(2){
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
         border-bottom: 1px solid #071c23;
+    }
+
+    .sub-menu div:not(.sub-menu-details) p:not(:first-child) {
+        padding: 1rem 0;
     }
 
     .nav-sub {
@@ -332,12 +350,12 @@
     }
 
     /* Need to figure this out */
-    .nav-checkbox:checked ~ .nav-mobile-x:hover::before,
+    /* .nav-checkbox:checked ~ .nav-mobile-x:hover::before,
     .nav-checkbox:checked ~ .nav-mobile-x:hover::after
     {
         opacity: .5;
         z-index: 10000;
-    }
+    } */
 
     .nav-checkbox:checked ~ .nav-sub {
         display: block;
