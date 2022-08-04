@@ -6,7 +6,6 @@
     transform: translateX(-50%);
     border: 1px solid #071c23;
     border-top: none;
-
     z-index: 50;
 }
 
@@ -28,10 +27,14 @@
     height: 50px;
 }
 
+.hamburger {
+    display: none;
+}
+
 .nav-links {
     display: flex;
     justify-content: space-around;
-    width: 60%;
+    width: 65%;
     align-items: center;
 }
 
@@ -112,15 +115,19 @@
 .sub-menu-details {
     background-color: #071c23;
     color: aliceblue;
+    font-weight: 100;
 }
 
 .sub-menu-details h4 {
-    font-size: 1.2rem;
+    font-size: 1.8rem;
+    padding: 5px 0px;
     margin-bottom: .5rem;
 }
 
-.sub-menu-details p {
-    font-size: .9rem;
+.sub-menu-details h4,
+.sub-menu-details p
+{
+    cursor: text;
 }
 
 .sub-menu-heading {
@@ -147,5 +154,108 @@
     opacity: .5;
 }
 
+@media only screen and (max-width: 750px) {
+    .menu-container .buttons {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 600px) {
 
 
+    .hamburger,
+    .hamburger-checkbox
+    {
+        display: block;
+        position: absolute;
+        top: 25px;
+        right: 10px;
+        cursor: pointer;
+        padding: .5rem;
+        margin: 10px;
+        border-top: 2.5px solid #071c23;
+        width: 35px;
+        height: 35px;
+        transition: all .3s ease-in-out;
+    }
+
+    .hamburger-checkbox {
+        opacity: 0;
+    }
+
+    .hamburger::before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: -13.5px;
+        right: 0;
+        border-top: 2.5px solid #071c23;
+        width: 35px;
+        height: 35px;
+        transition: all .3s ease-in-out;
+    }
+
+    .hamburger::after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        border-top: 2.5px solid #071c23;
+        width: 35px;
+        height: 35px;
+        top: 8.5px;
+        right: 0;
+        transition: all .3s ease-in-out;
+    }
+
+    .nav-links { 
+        display: none;
+    }
+
+    #hamburger:checked ~ .hamburger {
+        border: none;
+    }
+
+    #hamburger:checked ~ .hamburger::before {
+        display: inline-block;
+        position: absolute;
+        transform: rotate(45deg);
+        top: -7.5px;
+        right: 12px;
+    }
+
+    #hamburger:checked ~ .hamburger::after {
+        display: inline-block;
+        position: absolute;
+        transform: rotate(-45deg);
+        top: -7.5px;
+        right: -12px;
+    }
+
+    #hamburger:checked ~ .hamburger:hover::before,
+    #hamburger:checked ~ .hamburger:hover::after
+    {
+        /* This needs to be a border color instead because the opacity currently makes a little square in the middle of the x */
+        opacity: .5;
+    }
+
+
+    #hamburger:checked ~ .nav-links {
+        display: flex;
+    }
+
+    .nav-links {
+        position: absolute;
+        right: 0;
+        top: 76px;
+        flex-direction: column;
+        background-color: white;
+        border: 1px solid #071c23;
+        border-top: none;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    .nav-links .nav {
+        width: 100%;
+    }
+}
